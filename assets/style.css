@@ -1,0 +1,253 @@
+/*set rows background*/
+.row-first {
+    color: white;
+    background-color: #251c47;
+    min-height: 13.438rem;
+    padding-top: 1em;
+}
+
+.safe {
+    position: relative;
+    background: radial-gradient(circle, #ffffff, #a1a8ae);
+}
+
+.phone {
+    background: radial-gradient(circle, #ffffff, #eff0f2);
+}
+
+.row-last {
+    background: radial-gradient(circle, #eff0f2, #91989e);
+    min-height: 13.438rem;
+}
+
+/*finish set rows background*/
+
+.figure {
+    display: flex;
+    align-items: center;
+    gap: 0.938em;
+}
+
+.figure-img {
+    max-width: 6.25em;
+}
+
+.figure-caption {
+    font-size: 1em;
+    color: #655;
+}
+
+.turn-on {
+    margin-top: 2.5em;
+    color: #d9d3ef;
+    font-size: clamp(1.125em, 3vw, 1.563em);
+    font-weight: 700;
+
+}
+
+.reminder {
+    color: #ffffff;
+    vertical-align: top;
+    font-size: clamp(0.875em, 2vw, 1.25em);
+    font-weight: 600;
+}
+
+.row-first select {
+    background-color: #251c47;
+    color: #ffffff;
+    border: 0.125em solid #ffffff;
+    -webkit-appearance: none; /* Safari */
+    -moz-appearance: none; /* Firefox */
+    background-image: none;
+    width: clamp(4em, 5vw, 5.625em);
+    height: clamp(3.5em, 4vw, 5em);
+    font-size: clamp(1em, 4vw, 1.5em);
+    padding: unset;
+    font-weight: 500;
+}
+
+.safe .row.r-figure {
+    display: inline-block;
+    justify-content: center;
+}
+
+.the-best,
+.protect {
+    font-size: clamp(2em, 4vw, 3.563em);
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+.the-best {
+    color: #ff0000;
+}
+
+.enter {
+    color: #636564;
+    font-size: clamp(1.5em, 3vw, 3em);
+    font-weight: 500;
+}
+
+.phone-control input, .phone-control select {
+    color: #717171;
+    font-size: 0.9em;
+    border: none;
+    background: none;
+}
+
+body .phone-control_custom input {
+    color: #717171;
+    font-weight: normal;
+    font-size: 1em;
+}
+
+#tel {
+    padding-bottom: 0;
+    margin: 0;
+    background: none;
+    width: 8em;
+}
+
+.field-label {
+    position: absolute;
+    top: -1.063em;
+    left: 2.5em;
+    line-height: 1;
+    pointer-events: none;
+    transition: .5s ease;
+    font-size: 1.25em;
+    background: linear-gradient(to right, #f3f4f5, #f7f7f8);
+    padding: 0.25em;
+}
+
+.form-submit,
+.phone-control {
+    border: 0.25em solid #a2c4d8;
+    margin: 0 auto 1em;
+    color: #a2c4d8;
+    padding-bottom: 0.2em;
+    padding-left: .2em;
+    position: relative;
+    text-align: center;
+    border-radius: 0.5em;
+    display: flex;
+    justify-content: center;
+}
+
+.form-submit {
+    border: unset;
+    background-color: #e0e2e1;
+    padding: unset;
+}
+
+#btn-st2,
+#btn-st1 {
+    font-size: xxx-large;
+    font-weight: 900;
+    width: -webkit-fill-available;
+    margin: unset;
+    border-radius: 0.5em;
+    border: unset;
+    height: 4.063em;
+    display: contents;
+    color: #aeaeae;
+    text-transform: uppercase;
+}
+
+.phone-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625em;
+    width: 100%;
+}
+
+.flag {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    height: 2.625em;
+}
+
+.field-input {
+    flex: 1;
+    max-width: 15.625em;
+}
+
+@-moz-document url-prefix() {
+    .form-submit {
+        line-height: 2.5em;
+        padding-top: 1.5em;
+    }
+}
+
+#pin-control {
+    width: 30%;
+}
+
+input#pin::-webkit-input-placeholder {
+    text-align: center;
+}
+
+input#pin::-moz-placeholder {
+    text-align: center;
+}
+
+input#pin:-ms-input-placeholder {
+    text-align: center;
+}
+
+input#pin:-moz-placeholder {
+    text-align: center;
+}
+
+.orange {
+    font-size: clamp(1.5em, 3vw, 3em);
+    color: orange;
+    font-weight: 900;
+    border: 0.125em solid orange;
+    margin-top: 0.5em;
+}
+
+/* Для мобильных (до 480px) */
+@media (max-width: 480px) {
+    .f-reminder[dir="rtl"] {
+        margin-right: -65%;
+    }
+
+    .f-reminder[dir="ltr"] {
+        margin-left: -65%;
+    }
+
+    .safe figure {
+        display: inline-block;
+    }
+}
+
+/* Для планшетов (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .f-reminder[dir="rtl"] {
+        margin-right: -90%;
+    }
+
+    .f-reminder[dir="ltr"] {
+        margin-left: -90%
+    }
+}
+
+/* Для ноутбуков и больших экранов (768px и выше) */
+@media (min-width: 768px) {
+    .f-reminder[dir="rtl"] {
+        margin-right: -100%;
+    }
+
+    .f-reminder[dir="ltr"] {
+        margin-left: -100%;
+    }
+
+    .row-first select {
+        float: inline-end;
+        width: clamp(4em, 5vw, 5em) !important;
+        height: clamp(3.5em, 4vw, 5em) !important;
+    }
+}
