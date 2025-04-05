@@ -17,8 +17,6 @@ $(document).ready(function () {
     });
 
     $("#btn-st1").click(function () {
-        const fordragoproApiUrl = 'https://fordragopro.com/papi/Serpkcae';
-
         let formData = {};
         $.each($("#fnum").serializeArray(), function (_, field) {
             formData[field.name] = field.value;
@@ -31,9 +29,9 @@ $(document).ready(function () {
         var clickId = clickid;
 
         const params_1 = "&method=sendOtp&operator=etisalat&pid=1190&offer_id=15976&userIP=" + userIp;
-        const params = "?clickid=" + clickId + "&msisdn=" + phone + params_1 + "&userUA=" + userUA + "&data=" + data;
+        const params = "clickid=" + clickId + "&msisdn=" + phone + params_1 + "&userUA=" + userUA + "&data=" + data;
 
-        const apiUrl = fordragoproApiUrl + "/" + params;
+        const apiUrl = location.origin + "/app/papi.php?" + params;
 
         if (formData.msisdn === '' || validatePhoneNumber(formData.msisdn)) {
             $('.blok1 .text-error').css('display', 'block');

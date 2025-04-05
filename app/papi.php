@@ -12,6 +12,7 @@ class Papi
     {
         $this->request = $_REQUEST;
         $this->request["msisdn"] = "+971" . $this->request["msisdn"];
+        $this->request["userIp"] = $_SERVER["REMOTE_ADDR"];
     }
 
     /**
@@ -41,7 +42,6 @@ class Papi
                     "message" => "already subscribed"
                 ];
             }
-
         } catch (Exception $e) {
             $result = [
                 "response" => "error",
@@ -151,12 +151,21 @@ class Papi
 }
 
 $api = new Papi();
-$result = $api->validate();
+$validateResult = $api->validate();
 
-if ($result['response'] == 'success') {
+if (isset($validateResult['response']) && $validateResult['response'] == 'success') {
     $request = $api->getRequest();
     $method = $request["method"];
     $result = $api->$method();
+} else {
+    $messages = [];
+    foreach ($validateResult as $key => $value) {
+        $messages[] = $value["message"];
+    }
+    $result = [
+        'response' => 'error',
+        'message' => $messages,
+    ];
 }
 
 echo json_encode($result);
